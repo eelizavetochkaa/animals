@@ -35,8 +35,10 @@
             справкаToolStripMenuItem = new ToolStripMenuItem();
             aboutprogram = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
+            pictureBox1 = new PictureBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -61,6 +63,7 @@
             open.Name = "open";
             open.Size = new Size(224, 26);
             open.Text = "Открыть";
+            open.Click += open_Click;
             // 
             // exit
             // 
@@ -91,11 +94,20 @@
             dataGridView1.Size = new Size(437, 416);
             dataGridView1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(617, 43);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(174, 160);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(990, 453);
+            Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -104,6 +116,7 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -117,5 +130,6 @@
         private ToolStripMenuItem справкаToolStripMenuItem;
         private ToolStripMenuItem aboutprogram;
         private DataGridView dataGridView1;
+        private PictureBox pictureBox1;
     }
 }

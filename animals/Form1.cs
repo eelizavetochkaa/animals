@@ -11,7 +11,8 @@ namespace animals
         public Form1()
         {
             InitializeComponent();
-            openFileDialog = new OpenFileDialog();
+            LoadAnimalsFromFile();
+            PopulateDataGridView();
         }
         public void exit_click(object sender, EventArgs e)
         {
@@ -27,12 +28,12 @@ namespace animals
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                
+
             }
         }
-        private void LoadBooksFromFile()
+        private void LoadAnimalsFromFile()
         {
-            string filePath = "animals.txt"; 
+            string filePath = "animals.txt";
             if (File.Exists(filePath))
             {
                 string[] lines = File.ReadAllLines(filePath);
@@ -47,13 +48,34 @@ namespace animals
                             Type = Convert.ToInt32(parts[1].Trim()),
                             Name = parts[2].Trim(),
                             Health = Convert.ToInt32(parts[3].Trim()),
-                            Number2 = Convert.ToInt32(parts[3].Trim()),
+                            Number2 = Convert.ToInt32(parts[4].Trim()),
                         };
                         animals.Add(animal);
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Файл не найден");
+            }
         }
 
+        private void PopulateDataGridView()
+        {
+            dataGridView1.Columns.Add("Number", "Номер");
+            dataGridView1.Columns.Add("Type", "Тип");
+            dataGridView1.Columns.Add("Name", "Кличка");
+            dataGridView1.Columns.Add("Health", "Здоровье");
+            dataGridView1.Columns.Add("Number2", "Номер2");
+            foreach (Animals animal in animals)
+            {
+                dataGridView1.Rows.Add(animal.Number, animal.Type, animal.Name, animal.Health, animal.Number2);
+            }
+        }
+
+        private void aboutprogram_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Приложение создано на языке C# WindowsForms в приложении VisualStudio 2022");
+        }
     }
 }

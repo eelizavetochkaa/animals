@@ -35,10 +35,12 @@
             справкаToolStripMenuItem = new ToolStripMenuItem();
             aboutprogram = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
-            pictureBox1 = new PictureBox();
+            image = new PictureBox();
+            type = new Label();
+            name = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)image).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -61,14 +63,14 @@
             // open
             // 
             open.Name = "open";
-            open.Size = new Size(224, 26);
+            open.Size = new Size(150, 26);
             open.Text = "Открыть";
             open.Click += open_Click;
             // 
             // exit
             // 
             exit.Name = "exit";
-            exit.Size = new Size(224, 26);
+            exit.Size = new Size(150, 26);
             exit.Text = "Выход";
             exit.Click += exit_Click_1;
             // 
@@ -82,8 +84,9 @@
             // aboutprogram
             // 
             aboutprogram.Name = "aboutprogram";
-            aboutprogram.Size = new Size(187, 26);
+            aboutprogram.Size = new Size(224, 26);
             aboutprogram.Text = "О программе";
+            aboutprogram.Click += aboutprogram_Click;
             // 
             // dataGridView1
             // 
@@ -94,29 +97,49 @@
             dataGridView1.Size = new Size(437, 416);
             dataGridView1.TabIndex = 1;
             // 
-            // pictureBox1
+            // image
             // 
-            pictureBox1.Location = new Point(617, 43);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(174, 160);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            image.Location = new Point(617, 43);
+            image.Name = "image";
+            image.Size = new Size(174, 160);
+            image.TabIndex = 2;
+            image.TabStop = false;
+            // 
+            // type
+            // 
+            type.AutoSize = true;
+            type.Location = new Point(529, 261);
+            type.Name = "type";
+            type.Size = new Size(35, 20);
+            type.TabIndex = 3;
+            type.Text = "Тип";
+            // 
+            // name
+            // 
+            name.AutoSize = true;
+            name.Location = new Point(536, 315);
+            name.Name = "name";
+            name.Size = new Size(58, 20);
+            name.TabIndex = 4;
+            name.Text = "Кличка";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(990, 453);
-            Controls.Add(pictureBox1);
+            Controls.Add(name);
+            Controls.Add(type);
+            Controls.Add(image);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Приют для животных";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)image).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -130,6 +153,8 @@
         private ToolStripMenuItem справкаToolStripMenuItem;
         private ToolStripMenuItem aboutprogram;
         private DataGridView dataGridView1;
-        private PictureBox pictureBox1;
+        private PictureBox image;
+        private Label type;
+        private Label name;
     }
 }

@@ -33,7 +33,7 @@ namespace animals
         }
         private void LoadAnimalsFromFile()
         {
-            string filePath = "animals.txt";
+            string filePath = "D:\\для универа\\вижуал студио\\animals\\animals\\animals.txt";
             if (File.Exists(filePath))
             {
                 string[] lines = File.ReadAllLines(filePath);
